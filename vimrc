@@ -1,6 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" <Leader> key binding
+let mapleader=";"
+
 filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
