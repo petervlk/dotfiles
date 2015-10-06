@@ -7,6 +7,9 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+" enable hidden buffers
+set hidden
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
