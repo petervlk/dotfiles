@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " <Leader> key binding
-let mapleader=";"
+let mapleader=","
 
 filetype plugin indent on
 set tabstop=2
@@ -70,6 +70,14 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+""""""""""""""""""""
+" :edit shortcuts
+""""""""""""""""""""
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
 
 """"""""""""""""""""
 " switch buffers
