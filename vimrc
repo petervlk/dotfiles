@@ -4,7 +4,6 @@ filetype off                  " required
 " <Leader> key binding
 let mapleader=","
 
-filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -28,12 +27,13 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+Plugin 'elzr/vim-json'
+Plugin 'samsonw/vim-task'
+Bundle 'tpope/vim-unimpaired'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -83,7 +83,7 @@ map <leader>et :tabe %%
 " switch buffers
 """"""""""""""""""""
 nnoremap <silent> <F12> :bn<CR>
-nnoremap <silent> <S-F12> :bp<CR>
+nnoremap <silent> <F11> :bp<CR>
 
 """"""""""""""""""""
 " NERDTree config
@@ -110,31 +110,62 @@ let g:airline#extensions#tabline#enabled = 1
 """"""""""""""""""""
 " XML formating
 """"""""""""""""""""
-function! DoPrettyXML()
-  " save the filetype so we can restore it later
+function! DoFormatXML() range
+  " Save the file type
   let l:origft = &ft
+
+  " Clean the file type
   set ft=
-  " delete the xml header if it exists. This will
-  " permit us to surround the document with fake tags
-  " without creating invalid xml.
-  1s/<?xml .*?>//e
-  " insert fake tags around the entire document.
-  " This will permit us to pretty-format excerpts of
-  " XML that may contain multiple top-level elements.
-  0put ='<PrettyXML>'
-  $put ='</PrettyXML>'
-  silent %!xmllint --format -
-  " xmllint will insert an <?xml?> header. it's easy enough to delete
-  " if you don't want it.
-  " delete the fake tags
-  2d
-  $d
-  " restore the 'normal' indentation, which is one extra level
-  " too deep due to the extra tags we wrapped around the document.
-  silent %<
-  " back to home
-  1
-  " restore the filetype
+
+  " Add fake initial tag (so we can process multiple top-level elements)
+  exe ":let l:beforeFirstLine=" . a:firstline . "-1"
+  if l:beforeFirstLine < 0
+    let l:beforeFirstLine=0
+  endif
+  exe a:lastline . "put ='</PrettyXML>'"
+  exe l:beforeFirstLine . "put ='<PrettyXML>'"
+  exe ":let l:newLastLine=" . a:lastline . "+2"
+  if l:newLastLine > line('$')
+    let l:newLastLine=line('$')
+  endif
+
+  " Remove XML header
+  exe ":" . a:firstline . "," . a:lastline . "s/<\?xml\\_.*\?>\\_s*//e"
+
+  " Recalculate last line of the edited code
+  let l:newLastLine=search('</PrettyXML>')
+
+  " Execute external formatter
+  exe ":silent " . a:firstline . "," . l:newLastLine . "!xmllint --noblanks --format --recover -"
+
+  " Recalculate first and last lines of the edited code
+  let l:newFirstLine=search('<PrettyXML>')
+  let l:newLastLine=search('</PrettyXML>')
+                                                     
+  " Get inner range
+  let l:innerFirstLine=l:newFirstLine+1
+  let l:innerLastLine=l:newLastLine-1
+
+  " Remove extra unnecessary indentation
+  exe ":silent " . l:innerFirstLine . "," . l:innerLastLine "s/^  //e"
+
+  " Remove fake tag
+  exe l:newLastLine . "d"
+  exe l:newFirstLine . "d"
+
+  " Put the cursor at the first line of the edited code
+  exe ":" . l:newFirstLine
+
+  " Restore the file type
   exe "set ft=" . l:origft
 endfunction
-command! PrettyXML call DoPrettyXML()
+command! -range=% FormatXML <line1>,<line2>call DoFormatXML()
+
+nmap <silent> <leader>x :%FormatXML<CR>
+vmap <silent> <leader>x :FormatXML<CR>
+
+function DoCleanPacmanOutput()
+  :%g!/^http:\/\//d
+  :%s/^.*\/\(.*\)-\(any\|x86_64\)\.pkg\.tar\.xz/\1/
+  :sort
+endfunction
