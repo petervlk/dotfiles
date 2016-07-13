@@ -55,6 +55,9 @@ plugins=(git)
 
 # User configuration
 
+# print arch logo on term emulator startup
+if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -84,6 +87,9 @@ export SSH_KEY_PATH="~/.ssh/default/id_rsa"
 
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+
+alias tree="tree -C"
+
 alias cded="cd ~/work/ED"
 alias cdedz="cd ~/work/ED/ress-edz"
 
@@ -91,6 +97,4 @@ alias cdedz="cd ~/work/ED/ress-edz"
 alias -s pdf=evince
 
 # keep vpn to MSSR alive
-alias vpn-justice-sk-permanent='vpn_mssr.sh && ping -i 5 10.67.176.23'
-
 alias vpn-justice-sk-permanent='vpn_mssr.sh && ping -i 5 10.67.146.24'
