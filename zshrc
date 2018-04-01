@@ -90,8 +90,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 alias tree="tree -C"
 
-alias cded="cd ~/work/ED"
-alias cdedz="cd ~/work/ED/ress-edz"
+alias prettyjson='python -m json.tool'
 
 # map file extensions to applications
 alias -s pdf=evince
