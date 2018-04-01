@@ -90,6 +90,9 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 alias tree="tree -C"
 
+# map file extensions to applications
+alias -s pdf=evince
+
 # set local machine aliases
 source $HOME/.aliases
 
