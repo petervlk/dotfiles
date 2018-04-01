@@ -90,10 +90,6 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 alias tree="tree -C"
 
-alias prettyjson='python -m json.tool'
+# set local machine aliases
+source $HOME/.aliases
 
-# map file extensions to applications
-alias -s pdf=evince
-
-# keep vpn to MSSR alive
-alias vpn-justice-sk-permanent='vpn_mssr.sh && ping -i 5 10.67.146.24'
