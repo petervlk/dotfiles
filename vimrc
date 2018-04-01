@@ -97,6 +97,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " LightLine config
 """"""""""""""""""""
 let g:lightline = {
+  \ 'colorscheme': 'solarized',
 	\   'component': {
 	\     'lineinfo': ' %3l:%-2v',
 	\   },
