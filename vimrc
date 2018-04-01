@@ -16,6 +16,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'elzr/vim-json'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 """"""""""""""""""""""
@@ -92,3 +93,17 @@ map <C-n> :NERDTreeToggle<CR>
 " exit vim if only NERDTree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+""""""""""""""""""""
+" LightLine config
+""""""""""""""""""""
+let g:lightline = {
+	\   'component': {
+	\     'lineinfo': ' %3l:%-2v',
+	\   },
+  \ }
+let g:lightline.separator = {
+	\   'left': '', 'right': ''
+  \}
+let g:lightline.subseparator = {
+	\   'left': '', 'right': ''
+  \}
