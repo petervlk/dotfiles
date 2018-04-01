@@ -94,5 +94,6 @@ alias tree="tree -C"
 alias -s pdf=evince
 
 # set local machine aliases
-source $HOME/.aliases
-
+if [ -f $HOME/.aliases ]; then
+    source $HOME/.aliases
+fi
