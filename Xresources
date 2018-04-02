@@ -36,7 +36,7 @@ URxvt.keysym.M-Right: perl:tabbedex:next_tab
 URxvt.keysym.M-Left: perl:tabbedex:prev_tab
 
 ! Xft Font Configuration
-Xft.dpi: 82
+Xft.dpi: 96
 Xft.antialias: true
 Xft.rgba: rgb
 Xft.hinting: false
