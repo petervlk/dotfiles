@@ -53,6 +53,14 @@ set showcmd
 """"""""""""""""
 set hlsearch
 
+
+""""""""""""""""""""
+" copy/paste from system clipboard
+""""""""""""""""""""
+nnoremap <Leader>p "+p
+nnoremap <Leader>c "+yy
+vnoremap <Leader>c "+y
+
 """"""""""""""""""""
 " fix some Alt-key combinations
 """"""""""""""""""""
@@ -72,7 +80,12 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 """"""""""""""""""""
 " break line
 """"""""""""""""""""
-:nnoremap <NL> i<CR><ESC>
+nnoremap <NL> i<CR><ESC>
+
+""""""""""""""""""""
+" Yanks go on clipboard instead.
+""""""""""""""""""""
+set clipboard+=unnamedplus 
 
 """"""""""""""""""""
 " switch buffers

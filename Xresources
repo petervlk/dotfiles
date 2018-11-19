@@ -1,5 +1,4 @@
 ! urxvt
-!URxvt*meta8: true
 URxvt*buffered: true
 URxvt*cursorBlink: true
 URxvt*underlineColor: yellow
