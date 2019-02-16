@@ -4,10 +4,11 @@ URxvt*cursorBlink: true
 URxvt*underlineColor: yellow
 
 ! Source Sans
-URxvt*font: xft:Source Code Pro:size=10
-URxvt*boldFont: xft:Source Code Pro:bold:size=10
-URxvt*italicFont: xft:Source Code Pro:italic:size=10
-URxvt*boldItalicFont: xft:Source Code Pro:bolditalic:size=10
+!URxvt*font: xft:Source Code Pro:size=10
+URxvt.font: xft:Source Code Pro:pixelsize=14, xft:Meslo LG M DZ for Powerline:pixelsize=14
+URxvt*boldFont: xft:Source Code Pro:pixelsize=14, xft:Meslo LG M DZ for Powerline:bold:size=14
+URxvt*italicFont: xft:Source Code Pro:pixelsize=14, xft:Meslo LG M DZ for Powerline:italic:size=14
+URxvt*boldItalicFont: xft:Source Code Pro:pixelsize=14, xft:Meslo LG M DZ for Powerline:bolditalic:size=14
 
 URxvt*geometry: 100x25
 URxvt*depth: 32
@@ -17,7 +18,7 @@ URxvt*loginShell: true
 Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
 URxvt*saveLines: 5000
 URxvt*termName: rxvt-unicode
-URxvt.perl-ext-common: default,matcher,tabbedex
+URxvt.perl-ext-common: default,matcher,resize-font
 URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: fg5
@@ -34,10 +35,6 @@ URxvt.tabbed.autohide: true
 URxvt.tabbed.reopen-on-close: yes
 URxvt.tabbed.tab-fg: 8
 URxvt.tabbed.tab-bg: 2
-
-URxvt.keysym.Control-t: perl:tabbedex:new_tab
-URxvt.keysym.M-Right: perl:tabbedex:next_tab
-URxvt.keysym.M-Left: perl:tabbedex:prev_tab
 
 ! Xft Font Configuration
 Xft.dpi: 96
