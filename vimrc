@@ -1,22 +1,30 @@
 """""""""""""""
 " Plugins Setup
 """""""""""""""
+" Environment
+set dictionary=/usr/share/dict/words
+set directory=$XDG_CACHE_HOME/vim,~/,/tmp
+set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CACHE_HOME/vim,$VIM,$VIMRUNTIME
+let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 
 " install plugin manager if missing
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+if empty(glob('$XDG_CACHE_HOME/vim/autoload/plug.vim'))
+  silent !curl -fLo $XDG_CACHE_HOME/vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " install plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('$XDG_CACHE_HOME/vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'elzr/vim-json'
 Plug 'itchyny/lightline.vim'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 """"""""""""""""""""""
@@ -36,6 +44,9 @@ set expandtab
 " Use the same symbols as TextMate for tabstops and EOLs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 set listchars=tab:▸\ ,eol:¬
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
 
 """"""""""""""""""""""
 " theme settings
@@ -106,6 +117,10 @@ map <C-n> :NERDTreeToggle<CR>
 " exit vim if only NERDTree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" add yaml stuffs
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 """"""""""""""""""""
 " LightLine config
 """"""""""""""""""""
@@ -121,3 +136,8 @@ let g:lightline.separator = {
 let g:lightline.subseparator = {
 	\   'left': '', 'right': ''
   \}
+
+""""""""""""""""""""
+" indentLine config
+""""""""""""""""""""
+let g:indentLine_setColors = 0
