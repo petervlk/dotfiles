@@ -1,5 +1,12 @@
 # dotfiles
 
+# Installation
+1. cd into `dotfiles` repository directory
+
+2. make file `install.sh` executable 
+
+3. run `install.sh`
+
 # Troubleshooting
 
 ## GDM - Ignored .Xresources
