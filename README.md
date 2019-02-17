@@ -7,6 +7,8 @@
 
 3. run `install.sh`
 
+4. relog into your user account
+
 # Troubleshooting
 
 ## GDM - Ignored .Xresources
