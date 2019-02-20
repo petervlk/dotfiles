@@ -15,6 +15,14 @@ set showcmd
 set hlsearch
 set ignorecase
 
+""""""""""""""""""""""""""""""""""
+" copy/paste from system clipboard
+""""""""""""""""""""""""""""""""""
+set clipboard+=unnamedplus
+nnoremap <Leader>p "+p
+nnoremap <Leader>c "+yy
+vnoremap <Leader>c "+y
+
 " ============================================================================
 " IDE actions
 " ============================================================================
