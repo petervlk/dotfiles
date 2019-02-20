@@ -33,4 +33,5 @@ ln -s $DOTFILES_DIR/zshenv $ZDOTDIR/zshenv
 ln -s $DOTFILES_DIR/Xresources $HOME/.Xresources
 ln -s $DOTFILES_DIR/vimrc $VIMDIR/vimrc
 ln -s $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
+ln -s $DOTFILES_DIR/ideavimrc $HOME/.ideavimrc
 
