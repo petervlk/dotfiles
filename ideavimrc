@@ -19,7 +19,7 @@ set ignorecase
 " IDE actions
 " ============================================================================
 nnoremap <Space>d :action CloseContent<CR>
-nnoremap <Space>j :action RecentFiles<CR>
+nnoremap <Space>j :action JumpToLastWindow<CR>
 nnoremap <Space>k :action FileStructurePopup<CR>
 nnoremap <Space>h :action QuickJavaDoc<CR>
 nnoremap <Space>u :action FindUsages<CR>
