@@ -30,7 +30,7 @@ call plug#end()
 """"""""""""""""""""""
 " <Leader> key binding
 """"""""""""""""""""""
-let mapleader=","
+let mapleader=" "
 
 """""""""""""""""""""""""""
 " tabs, spaces, indentation
@@ -63,7 +63,7 @@ set showcmd
 " search options
 """"""""""""""""
 set hlsearch
-
+nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
 """"""""""""""""""""
 " copy/paste from system clipboard
