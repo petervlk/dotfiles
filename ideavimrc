@@ -14,6 +14,7 @@ set showcmd
 """"""""""""""""
 set hlsearch
 set ignorecase
+set incsearch
 
 """"""""""""""""""""""""""""""""""
 " copy/paste from system clipboard
@@ -27,8 +28,12 @@ vnoremap <Leader>c "+y
 " IDE actions
 " ============================================================================
 nnoremap <Space>d :action CloseContent<CR>
+nnoremap <Space>e :action RecentFiles<CR>
 nnoremap <Space>j :action JumpToLastWindow<CR>
 nnoremap <Space>k :action FileStructurePopup<CR>
 nnoremap <Space>h :action QuickJavaDoc<CR>
 nnoremap <Space>u :action FindUsages<CR>
 nnoremap <Space>o :action GotoDeclaration<CR>
+nnoremap <Space>i :action GotoImplementation<CR>
+nnoremap <Space>d :action CloseContent<CR>
+nnoremap <Space>w <C-W>w
