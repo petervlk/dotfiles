@@ -16,6 +16,7 @@ set hlsearch
 set ignorecase
 set incsearch
 
+
 """"""""""""""""""""""""""""""""""
 " copy/paste from system clipboard
 """"""""""""""""""""""""""""""""""
@@ -23,6 +24,11 @@ set clipboard+=unnamedplus
 nnoremap <Leader>p "+p
 nnoremap <Leader>c "+yy
 vnoremap <Leader>c "+y
+
+""""""""""""""""""""
+" break line
+""""""""""""""""""""
+nnoremap <NL> i<CR><ESC>
 
 " ============================================================================
 " IDE actions
