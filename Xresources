@@ -18,8 +18,10 @@ URxvt*loginShell: true
 Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
 URxvt*saveLines: 5000
 URxvt*termName: rxvt-unicode
-URxvt.perl-ext-common: default,matcher,resize-font
-URxvt.urlLauncher: firefox
+URxvt.perl-ext-common: default,resize-font,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: fg5
 
