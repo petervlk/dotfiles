@@ -1,8 +1,9 @@
 #!/bin/bash
 
 DOTFILES_DIR=$(pwd)
-ZDOTDIR=$HOME/.config/zsh
-VIMDIR=$HOME/.config/vim
+ZDOTDIR=$XDG_CONFIG_HOME/zsh
+VIMDIR=$XDG_CONFIG_HOME/vim
+CLOJURE_TOOLS_HOME=$XDG_CONFIG_HOME/clojure
 ZSHENV_LOCAL_FILE=$ZDOTDIR/zshenv_local
 
 createZshEnvInitFile () {
@@ -34,4 +35,4 @@ ln -s $DOTFILES_DIR/Xresources $HOME/.Xresources
 ln -s $DOTFILES_DIR/vimrc $VIMDIR/vimrc
 ln -s $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
 ln -s $DOTFILES_DIR/ideavimrc $HOME/.ideavimrc
-
+ln -s $DOTFILES_DIR/deps.edn $CLOJURE_TOOLS_HOME/deps.edn
