@@ -1,0 +1,16 @@
+[user]
+        name = Peter Vlk
+        email = petervlk86@gmail.com
+
+[core]
+        autocrlf = input
+        editor = emacst
+
+[fetch]
+        prune = true
+
+[merge]
+        conflictstyle = diff3
+
+[url "ssh://git@github.com/"]
+        insteadOf = https://github.com/
