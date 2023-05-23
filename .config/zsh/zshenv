@@ -25,3 +25,4 @@ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
 
 export GITLIBS=$XDG_CACHE_HOME/clojure-gitlibs
+export DEPS_CLJ_TOOLS_DIR=$XDG_CACHE_HOME/deps.clj
