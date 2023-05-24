@@ -24,6 +24,7 @@ git for-each-ref \
 (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 alias emacst="emacs -nw"
+alias vim="nvim"
 
 # direnv setup
 eval "$(direnv hook zsh)"
