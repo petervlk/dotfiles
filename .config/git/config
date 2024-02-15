@@ -12,5 +12,12 @@
 [merge]
         conflictstyle = diff3
 
+## REuse REcorded REsolution
+#
+# remember how merge conflicts were resolved
+# example: resolve conflicts during rebase
+[rerere]
+	enabled = true
+
 [url "ssh://git@github.com/"]
         insteadOf = https://github.com/
