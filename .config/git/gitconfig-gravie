@@ -1,0 +1,6 @@
+[user]
+        name = Peter Vlk
+        email = peter.vlk@gravie.com
+
+[url "git@gitlab-gravie:gravie"]
+        insteadOf = git@gitlab.com:gravie
