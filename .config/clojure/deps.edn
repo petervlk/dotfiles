@@ -1,6 +1,6 @@
-{:aliases {:cider-clj {:extra-deps {nrepl/nrepl                   {:mvn/version "1.1.0"}
-                                    cider/cider-nrepl             {:mvn/version "0.44.0"}
-                                    refactor-nrepl/refactor-nrepl {:mvn/version "3.9.1"}}
+{:aliases {:cider-clj {:extra-deps {nrepl/nrepl                   {:mvn/version "1.1.1"}
+                                    cider/cider-nrepl             {:mvn/version "0.47.1"}
+                                    refactor-nrepl/refactor-nrepl {:mvn/version "3.10.0"}}
                        :main-opts  ["-m" "nrepl.cmdline"
                                     "--middleware" "[cider.nrepl/cider-middleware,refactor-nrepl.middleware/wrap-refactor]"]}
            :rebel     {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
@@ -12,5 +12,5 @@
            :antq-update {:deps      {com.github.liquidz/antq {:mvn/version "RELEASE"}}
                          :main-opts ["-m" "antq.core" "--upgrade" "--force"]}
 
-           :neil {:deps      {io.github.babashka/neil {:git/tag "v0.2.62" :git/sha "f597921"}}
+           :neil {:deps      {io.github.babashka/neil {:git/tag "v0.3.65" :git/sha "9a79582"}}
                   :main-opts ["-m" "babashka.neil"]}}}
