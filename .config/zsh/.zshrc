@@ -23,7 +23,11 @@ git for-each-ref \
 - %(color:red)%(authorname)%(color:reset) \
 (%(color:green)%(committerdate:relative)%(color:reset))'"
 
-alias emacst="emacs -nw"
+emacs() {
+  /usr/bin/emacs "$@" > /dev/null 2>&1 &
+}
+
+alias ee="/usr/bin/emacs -nw"
 alias vim="nvim"
 
 # direnv setup
