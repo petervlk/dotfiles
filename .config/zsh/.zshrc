@@ -30,6 +30,14 @@ emacs() {
 alias ee="/usr/bin/emacs -nw"
 alias vim="nvim"
 
+# dockerized aliases
+# alias aws='docker run --rm -it -v ~/.config/aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
+# alias cljstyle='docker run -v $PWD:/app --rm abogoyavlensky/cljstyle cljstyle'
+
+# # node
+# alias npm='docker run --rm -it --workdir /app -v $(pwd):/app node:slim npm'
+# alias npx='docker run --rm -it --workdir /app -v $(pwd):/app node:slim npx'
+
 # direnv setup
 eval "$(direnv hook zsh)"
 
