@@ -1,0 +1,7 @@
+\.git
+\.gitignore
+\.gitmodules
+
+\.lsp
+\.clj-kondo
+bb.edn
