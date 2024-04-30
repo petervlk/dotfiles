@@ -25,6 +25,3 @@ zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
 zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 
 zstyle ':prezto:module:history:alias' skip 'yes'
-
-zstyle ':prezto:module:syntax-highlighting' styles \
-  'comment' 'fg=yellow,bold'
