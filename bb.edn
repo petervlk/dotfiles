@@ -1,4 +1,4 @@
 {:min-bb-version "0.4.0"
  :tasks
- {stow     (shell "stow --verbose --stow .")
-  simulate (shell "stow --verbose --stow --simulate .")}}
+ {stow     (shell "stow --dotfiles --verbose --stow .")
+  simulate (shell "stow --dotfiles --verbose --stow --simulate .")}}
