@@ -1,2 +1,2 @@
-.clj-kondo/.cache
-.lsp/.cache
+.clj-kondo/
+.lsp/
