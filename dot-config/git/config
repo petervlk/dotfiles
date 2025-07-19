@@ -4,13 +4,24 @@
 
 [core]
         autocrlf = input
-        editor = emacst
+        editor = nvim
 
 [fetch]
         prune = true
+	
+[diff]
+        tool = nvimdiff
 
 [merge]
-        conflictstyle = diff3
+        tool = nvimdiff
+        conflictstyle = zdiff3
+
+[mergetool]
+        prompt = false
+        keepBackup = false
+
+[mergetool "nvimdiff"]
+        layout = "LOCAL,BASE,REMOTE / MERGED"
 
 ## REuse REcorded REsolution
 #
