@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# env vars to set on login, zsh settings in ~/config/zsh/.zshrc
+# read first
+
+# add scripts to path
+export PATH="$HOME/bin:$PATH"
+
+# default programs
+export TERM=xterm
+export EDITOR=nvim
+export VISUAL=nvim
+export TIME_STYLE="long-iso"
+# export DISPLAY=:0 # useful for some scripts
+
+# follow XDG base dir specification
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+
+# bootstrap .zshrc to ~/.config/zsh/.zshrc, any other zsh config files can also reside here
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+# add local settings
+if [ -f $ZDOTDIR/zshenv_local ]; then
+  source $ZDOTDIR/zshenv_local
+fi 
+
+# history files
+export LESSHISTFILE="$XDG_STATE_HOME/less_history"
+export PSQL_HISTORY=$XDG_STATE_HOME/psql_history
+
+# moving other files and some other vars
+# export MANPAGER="less -R --use-color -Dd+r -Du+b" # colored man pages
+export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker # only in rootless mode
+# export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock # uncomment if want rootless mode 
+export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
+export GITLIBS=$XDG_CACHE_HOME/clojure-gitlibs
+export DEPS_CLJ_TOOLS_DIR=$XDG_CACHE_HOME/deps.clj
