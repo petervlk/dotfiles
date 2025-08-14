@@ -5,8 +5,6 @@
 zmodload zsh/complist
 autoload -U compinit && compinit
 autoload -U colors && colors
-# autoload -U tetris # main attraction of zsh, obviously
-
 
 # cmp opts
 zstyle ':completion:*' menu select # tab opens cmp menu
@@ -44,6 +42,9 @@ source <(fzf --zsh) # allow for fzf history widget
 PURE_GIT_PULL=0
 autoload -U promptinit; promptinit
 prompt pure # requires https://github.com/sindresorhus/pure
+
+# requires fast-syntax-highlighting package
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # aliases
 alias l="ls -lh --color=auto --group-directories-first"
