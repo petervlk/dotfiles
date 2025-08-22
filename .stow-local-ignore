@@ -4,4 +4,10 @@
 
 \.lsp
 \.clj-kondo
-bb.edn
+bb\.edn
+
+\.idea
+.+\.iml
+\.cpcache
+
+.nrepl-port
