@@ -4,6 +4,7 @@
                          :main-opts  ["-m" "nrepl.cmdline"
                                       "--middleware" "[cider.nrepl/cider-middleware,refactor-nrepl.middleware/wrap-refactor]"]}
            :rebel       {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
+           :portal      {:extra-deps {djblue/portal {:mvn/version "0.60.2"}}}
                          :main-opts  ["-m" "rebel-readline.main"]}
            :hotload     {:extra-deps {com.github.clojure/tools.deps {:git/sha "8f8fc2571e721301b6d52e191129248355cb8c5a"}}}
            :antq-check  {:extra-deps {com.github.liquidz/antq {:mvn/version "RELEASE"}}
