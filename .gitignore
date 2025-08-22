@@ -12,3 +12,5 @@ dot-config/clojure/.cpcache/
 .idea/
 *.iml
 
+# tmux plugins
+dot-config/tmux/plugins/
