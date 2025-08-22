@@ -23,6 +23,10 @@
 [mergetool "nvimdiff"]
         layout = "LOCAL,BASE,REMOTE / MERGED"
 
+        # remove linematch option for mergetool
+        # https://github.com/neovim/neovim/issues/22696#issuecomment-2796545495
+        cmd = nvim -d -c \"set diffopt-=linematch:40\" -c '4wincmd w | wincmd J' \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"
+
 ## REuse REcorded REsolution
 #
 # remember how merge conflicts were resolved
