@@ -1,15 +1,16 @@
-{:aliases {:nrepl       {:extra-deps {nrepl/nrepl                   {:mvn/version "1.1.1"}
-                                      cider/cider-nrepl             {:mvn/version "0.47.1"}
-                                      refactor-nrepl/refactor-nrepl {:mvn/version "3.10.0"}}
+{:aliases {:nrepl       {:extra-deps {nrepl/nrepl                   {:mvn/version "1.3.1"}
+                                      cider/cider-nrepl             {:mvn/version "0.57.0"}
+                                      io.github.tonsky/clj-reload   {:mvn/version "0.9.8"}
+                                      refactor-nrepl/refactor-nrepl {:mvn/version "3.11.0"}}
                          :main-opts  ["-m" "nrepl.cmdline"
                                       "--middleware" "[cider.nrepl/cider-middleware,refactor-nrepl.middleware/wrap-refactor]"]}
-           :rebel       {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
            :portal      {:extra-deps {djblue/portal {:mvn/version "0.60.2"}}}
+           :rebel       {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.5"}}
                          :main-opts  ["-m" "rebel-readline.main"]}
-           :hotload     {:extra-deps {com.github.clojure/tools.deps {:git/sha "8f8fc2571e721301b6d52e191129248355cb8c5a"}}}
+           :hotload     {:extra-deps {com.github.clojure/tools.deps {:git/sha "06e68d57072e9399921f69c6eafb5f542b4c2d8e"}}}
            :antq-check  {:extra-deps {com.github.liquidz/antq {:mvn/version "RELEASE"}}
                          :main-opts  ["-m" "antq.core"]}
            :antq-update {:deps      {com.github.liquidz/antq {:mvn/version "RELEASE"}}
                          :main-opts ["-m" "antq.core" "--upgrade" "--force"]}
-           :neil        {:deps      {io.github.babashka/neil {:git/tag "v0.3.65" :git/sha "9a79582"}}
+           :neil        {:deps      {io.github.babashka/neil {:git/tag "v0.3.68" :git/sha "78ffab1"}}
                          :main-opts ["-m" "babashka.neil"]}}}
