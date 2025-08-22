@@ -1,0 +1,20 @@
+set nu "rnu
+set clipboard=unnamedplus
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch ""highlight halfway typing
+set visualbell
+set noerrorbells
+
+" map leader to Space
+let mapleader = " "
+
+" localleader hack
+nmap , <leader>l
+vmap , <leader>l
+
+map <leader><leader> <Action>(SearchEverywhere)
+map <leader>f <Action>(GotoFile)
+map <leader>g <Action>(FindInPath)
+map <leader>b <Action>(Switcher)
