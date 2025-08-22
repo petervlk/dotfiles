@@ -8,31 +8,3 @@ Host github.com
         IdentityFile ~/.ssh/github/id_rsa
         IdentitiesOnly true
 
-# Frankie - Staging
-Host frankie-staging
-        HostName 95.129.102.38
-        User frankie
-        Port 2525
-        IdentityFile ~/.ssh/flexiana/frankie/staging/id_rsa
-        IdentitiesOnly true
-
-# Flexiana - bitbucket
-Host bitbucket.org
-        HostName bitbucket.org
-        User vlk-flexiana
-        IdentityFile ~/.ssh/flexiana/bitbucket/id_rsa
-        IdentitiesOnly true
-
-# Flexiana - gitlab.com
-Host gitlab.com
-        HostName gitlab.com
-        User git
-        IdentityFile ~/.ssh/flexiana/com.gitlab/id_rsa
-        IdentitiesOnly true
-
-# Gravie - gitlab.com
-Host gitlab-gravie
-        HostName gitlab.com
-        User git
-        IdentityFile ~/.ssh/flexiana/gravie/id_ed25519
-        IdentitiesOnly true
