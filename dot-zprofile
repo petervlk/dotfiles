@@ -32,7 +32,7 @@ export LESSHISTFILE="$XDG_STATE_HOME/less_history"
 export PSQL_HISTORY=$XDG_STATE_HOME/psql_history
 
 # moving other files and some other vars
-# export MANPAGER="less -R --use-color -Dd+r -Du+b" # colored man pages
+export FZF_ALT_C_OPTS="--preview 'tree -C -L 1 {} | head -200'" # fzf uses tree command to show the entries of the directory
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker # only in rootless mode
 # export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock # uncomment if want rootless mode 
 export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
