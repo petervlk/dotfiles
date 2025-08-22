@@ -33,5 +33,5 @@
 [url "ssh://git@github.com/"]
         insteadOf = https://github.com/
 
-[includeIf "gitdir:~/projects/work/flexiana/gravie/"]
-    path = ~/.config/git/gitconfig-gravie
+[init]
+	defaultBranch = main
