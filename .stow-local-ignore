@@ -2,6 +2,8 @@
 \.gitignore
 \.gitmodules
 
+README.md
+
 \.lsp
 \.clj-kondo
 bb\.edn
