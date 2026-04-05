@@ -38,3 +38,5 @@ export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker # only in rootless mode
 export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
 export GITLIBS=$XDG_CACHE_HOME/clojure-gitlibs
 export DEPS_CLJ_TOOLS_DIR=$XDG_CACHE_HOME/deps.clj
+
+export ZK_NOTEBOOK_DIR=$HOME/notebook
