@@ -47,10 +47,11 @@ prompt pure # requires https://github.com/sindresorhus/pure
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # aliases
-alias l="ls -lh --color=auto --group-directories-first"
+alias l="ls -1A --color=auto --group-directories-first"
 alias ll="ls -alh --color=auto --group-directories-first"
 alias grep="grep --color=auto"
 alias nv="nvim"
+alias cat="bat"
 
 alias git-show-remote-branches="
 git for-each-ref \
